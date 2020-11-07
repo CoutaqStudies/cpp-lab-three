@@ -24,7 +24,7 @@ void Subtractor::logToScreen() {
         (ops[i] >= 0 ?
          std::cout << ops[i]:
          std::cout << '(' << ops[i] << ')') //add parenthesis when operand is negative
-                << (i != n - 1 ? ("-"): "=");
+                << (i != n - 1 ? (" minus "): " equals ");
     }
     std::cout<<calculate()<<std::endl;
 }

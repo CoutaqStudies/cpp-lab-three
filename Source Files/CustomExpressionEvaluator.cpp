@@ -7,7 +7,18 @@
 #include <algorithm>
 #include <random>
 #include "../Header Files/CustomExpressionEvaluator.h"
-
+/*Вариант 8
+Вид выражения CustomExpression: result = x1 * x2 / x3 * x4 / x5 * ...
+Порядок создания и инициализации объектов подклассов:
+CustomExpressionEvaluator: 5 операндов, присвоить группой 5, 10, -2.5, -40, -2.
+Subtractor: 9 операндов, присвоить группой 120,-12, 83.2, -1.5, 5, 7, 2, 18.5, 76.
+Multiplier: 2 операнда, присвоить поэлементно -1.5, 80.
+Метод shuffle() – поменять местами первый и последний операнды, имеющие
+дробную часть. Метод shuffle(size_t i, size_t j) – если хотя бы один из i-ого и jого операндов имеет дробную часть, поменять их местами, иначе – не менять.
+Формат вывода:
+<4>
+5 times 10 divided by (-2.5) times (-40) divided by (-2)
+<Result: -400>*/
 CustomExpressionEvaluator::CustomExpressionEvaluator(): ExpressionEvaluator(){
 
 }
@@ -46,8 +57,8 @@ void CustomExpressionEvaluator::logToFile(const std::string &filename) {
          myfile << ops[i]:
          myfile << '(' << ops[i] << ')') //add parenthesis when operand is negative
                 << (i != n - 1 ?
-                    (i % 2 == 0?"*":"/"):
-                    "="); // change the symbol to the equals sign if its the last one
+                    (i % 2 == 0?" times ":" divided by "):
+                    " equals "); // change the symbol to the equals sign if its the last one
     }
     myfile<<calculate()<<std::endl;
 

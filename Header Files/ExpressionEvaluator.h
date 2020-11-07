@@ -16,6 +16,7 @@ class ExpressionEvaluator : public ILoggable{
         virtual std::string getName() = 0;
         virtual double calculate() = 0;
         virtual ~ExpressionEvaluator();
+        int getN();
     protected:
         size_t n;
         double* ops;

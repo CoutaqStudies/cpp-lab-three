@@ -29,3 +29,6 @@ void ExpressionEvaluator::setOperands(double _ops[], size_t _n){
         ops[i] = _ops[i];
     }
 }
+int ExpressionEvaluator::getN(){
+    return n;
+}
