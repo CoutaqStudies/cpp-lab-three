@@ -37,7 +37,7 @@ void Multiplier::logToFile(const std::string &filename) {
         (ops[i] >= 0 ?
          std::cout << ops[i]:
          std::cout << '(' << ops[i] << ')') //add parenthesis when operand is negative
-                << (i != n - 1 ? ("*"): "=");
+                << (i != n - 1 ? (" times "): " equals ");
     }
     myfile<<calculate()<<std::endl;
 

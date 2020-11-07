@@ -43,8 +43,8 @@ void CustomExpressionEvaluator::logToScreen() {
         std::cout << ops[i]:
         std::cout << '(' << ops[i] << ')') //add parenthesis when operand is negative
         << (i != n - 1 ?
-        (i % 2 == 0?"*":"/"):
-        "="); // change the symbol to the equals sign if its the last one
+        (i % 2 == 0?" time ":" divided by "):
+        " equals"); // change the symbol to the equals sign if its the last one
     }
     std::cout<<calculate()<<std::endl;
 }
