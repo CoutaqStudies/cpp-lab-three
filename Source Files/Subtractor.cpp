@@ -3,6 +3,7 @@
 //
 #include <iostream>
 #include <fstream>
+#include <random>
 #include "../Header Files/Subtractor.h"
 
 Subtractor::Subtractor(): ExpressionEvaluator(){
@@ -39,6 +40,16 @@ void Subtractor::logToFile(const std::string &filename) {
                 << (i != n - 1 ? (" minus "): " equals ");
     }
     myfile<<calculate()<<std::endl;
+}
+void Subtractor::shuffle() const{
+    std::random_device rd;
+    std::mt19937 gen(rd());
+    std::uniform_int_distribution<> distr(0, n-1);
+    for(int i=0; i<n; ++i)
+        shuffle(distr(gen), distr(gen));
+}
+void Subtractor::shuffle(size_t i, size_t j) const {
+    std::swap(ops[i], ops[j]);
 }
 std::string Subtractor::getName() {
     return name;

@@ -112,6 +112,9 @@ void taskOne(){
             evaluator->logToScreen();
         }
     }
+    for(auto & evaluator : evaluators) {
+        delete evaluator;
+    }
 }
 #pragma endregion
 #pragma region Task Two
@@ -158,7 +161,8 @@ void taskTwo(){
             processor->process("any photo");
             employee->printInfo();
         }
-
     }
-
+    for (auto & employee : employees){
+        delete employee;
+    }
 }
